@@ -5,11 +5,11 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g4t8"]
 
-[node name="Sprite2D" type="Sprite2D" unique_id=1132773746]
+[node name="StackableObject" type="Area2D" unique_id=1154160180]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1132773746]
 texture = ExtResource("1_todf2")
 script = ExtResource("1_2g4t8")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1154160180]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1123736785]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123736785]
 shape = SubResource("RectangleShape2D_2g4t8")
