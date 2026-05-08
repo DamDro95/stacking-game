@@ -19,10 +19,10 @@ position = Vector2(110, 0)
 position = Vector2(-110, 0)
 
 [node name="StackableObject" parent="." unique_id=620588430 instance=ExtResource("3_3rjud")]
-position = Vector2(-73, -175)
+position = Vector2(-64, -230)
 
 [node name="StackableObject2" parent="." unique_id=584199349 instance=ExtResource("3_3rjud")]
-position = Vector2(2, -482)
+position = Vector2(-1, -246)
 
 [node name="StackableObject3" parent="." unique_id=669030390 instance=ExtResource("3_3rjud")]
-position = Vector2(56, -1584)
+position = Vector2(55, -223)

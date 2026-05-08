@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://1mw26pj36kag"]
 
-[ext_resource type="Script" uid="uid://c0hnb52rq6nty" path="res://Scripts/stackable_object.gd" id="1_2g4t8"]
+[ext_resource type="Script" uid="uid://baqt0uv3g63ns" path="res://Scripts/stackable_object.gd" id="1_2g4t8"]
 [ext_resource type="Texture2D" uid="uid://d4m5tex5dwkxl" path="res://Assets/Cheese.png" id="1_todf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g4t8"]
 
 [node name="StackableObject" type="Area2D" unique_id=1154160180]
+script = ExtResource("1_2g4t8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1132773746]
 texture = ExtResource("1_todf2")
-script = ExtResource("1_2g4t8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123736785]
 shape = SubResource("RectangleShape2D_2g4t8")
