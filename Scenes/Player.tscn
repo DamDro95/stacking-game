@@ -16,10 +16,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=826308022]
+[node name="Player" type="CharacterBody2D" unique_id=826308022]
 script = ExtResource("1_rpqav")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612866858]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1746106341]
 shape = SubResource("RectangleShape2D_3vtpo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=522967555]

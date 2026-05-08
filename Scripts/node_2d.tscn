@@ -1,21 +1,23 @@
 [gd_scene format=3 uid="uid://dpufkg3k3u3ar"]
 
+[ext_resource type="Script" uid="uid://788nsxyql68t" path="res://Scripts/main.gd" id="1_u8md8"]
 [ext_resource type="PackedScene" uid="uid://eaoy50jwe5p4" path="res://Scenes/Player.tscn" id="1_x1gbe"]
 [ext_resource type="PackedScene" uid="uid://gxywdaab048m" path="res://Scenes/Boundry.tscn" id="2_3vtpo"]
 [ext_resource type="PackedScene" uid="uid://1mw26pj36kag" path="res://Scenes/StackableObject.tscn" id="3_3rjud"]
 
 [node name="Node2D" type="Node2D" unique_id=1268358540]
+script = ExtResource("1_u8md8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2006666752]
 offset = Vector2(0, -190)
 zoom = Vector2(2, 2)
 
-[node name="CharacterBody2D" parent="." unique_id=826308022 instance=ExtResource("1_x1gbe")]
+[node name="Player" parent="." unique_id=826308022 instance=ExtResource("1_x1gbe")]
 
-[node name="Map" parent="." unique_id=457413062 instance=ExtResource("2_3vtpo")]
+[node name="LeftBoundry" parent="." unique_id=457413062 instance=ExtResource("2_3vtpo")]
 position = Vector2(110, 0)
 
-[node name="Map2" parent="." unique_id=271718441 instance=ExtResource("2_3vtpo")]
+[node name="RightBoundry" parent="." unique_id=271718441 instance=ExtResource("2_3vtpo")]
 position = Vector2(-110, 0)
 
 [node name="StackableObject" parent="." unique_id=620588430 instance=ExtResource("3_3rjud")]
