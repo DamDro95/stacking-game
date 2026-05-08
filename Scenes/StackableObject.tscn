@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1mw26pj36kag"]
+
+[ext_resource type="Script" uid="uid://spgbc5uoy0dx" path="res://Scripts/stackable_object.gd" id="1_2g4t8"]
+[ext_resource type="Texture2D" uid="uid://d4m5tex5dwkxl" path="res://Assets/Cheese.png" id="1_todf2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g4t8"]
+
+[node name="StackableObject" type="Node2D" unique_id=620588430]
+script = ExtResource("1_2g4t8")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=973751096]
+gravity_scale = 0.2
+linear_velocity = Vector2(0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1828644078]
+texture = ExtResource("1_todf2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2038249302]
+shape = SubResource("RectangleShape2D_2g4t8")
