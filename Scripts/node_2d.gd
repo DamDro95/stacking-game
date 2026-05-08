@@ -15,7 +15,6 @@ func get_a_random_position(p1: Vector2, p2: Vector2) -> Vector2:
 	var y_value: float = randf_range(p1.y, p2.y)
 	# Set the random values into a Vector2
 	var random_position: Vector2 = Vector2(x_value, y_value)
-	
 	return(random_position)
 
 func spawn_stackable():
