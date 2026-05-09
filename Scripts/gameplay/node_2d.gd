@@ -6,14 +6,15 @@ extends Node2D
 @onready var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.tscn")
 @onready var is_paused: bool = false
 @onready var recipe_manager = RecipeManager.new()
-@onready var recipe: Dictionary;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$PauseMenu.hide()
 	randomize()
-	recipe = recipe_manager.new_recipe()
-
+	recipe_manager.new_recipe()
+	$CharacterBody2D.item_stacked.connect(recipe_manager.stack_calculation)
+	recipe_manager.recipe_completed.connect(game_win)
+	
 func get_a_random_position(p1: Vector2, p2: Vector2) -> Vector2:
 	# Get random x and y values
 	var x_value: float = randf_range(p1.x, p2.x)
@@ -39,3 +40,9 @@ func _on_spawn_timer_timeout() -> void:
 # Changing the interval time (increasing spawn rate)
 func _on_interval_timer_timeout() -> void:
 	$SpawnTimer.wait_time *= 0.9
+	
+func game_win() -> void:
+	print('Winner')
+
+func game_lose() -> void:
+	print('Lose') 

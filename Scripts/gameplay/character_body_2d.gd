@@ -7,6 +7,8 @@ var stack: Array[Area2D] = []
 
 @onready var stack_marker = $Marker2D
 
+signal item_stacked
+
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -55,3 +57,4 @@ func _stack(area: Area2D) -> void:
 	$Area2D.position = stack_marker.position
 
 	stack.append(area)
+	item_stacked.emit(area)
