@@ -15,9 +15,14 @@ run/main_scene="uid://caoeee7s4m5ti"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dleekuk3db5fw"
+
 [autoload]
 
 SceneLoader="*uid://xkgki7bucrq6"
+AudioController="*uid://c8fm10cgp0qof"
 
 [display]
 

@@ -10,18 +10,8 @@ var is_paused: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$PauseMenu.hide()
+	AudioController.play_ambient_bubbles()
 	randomize()
-
-#func _process(_delta: float) -> void:
-	#if Input.is_action_just_pressed("Pause") and is_paused == false:
-		#is_paused = true
-		#get_tree().paused = true
-		#$PauseMenu.show()
-	#elif Input.is_action_just_pressed("Pause") and is_paused == true:
-		#get_tree().paused = false
-		#$PauseMenu.hide()
-		#
-		#is_paused = false
 
 func get_a_random_position(p1: Vector2, p2: Vector2) -> Vector2:
 	# Get random x and y values
