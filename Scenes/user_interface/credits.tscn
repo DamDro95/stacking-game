@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://cunnoexbwjvs3"]
+
+[ext_resource type="Script" uid="uid://de4tyfve8bk5t" path="res://Scripts/credits.gd" id="1_gagih"]
+[ext_resource type="Texture2D" uid="uid://dfp1s5e16i6co" path="res://Assets/ratcut.jpg" id="2_g0ic8"]
+[ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="3_orip4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bamb"]
+texture = ExtResource("2_g0ic8")
+texture_margin_top = 49.0
+modulate_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xelri"]
+bg_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uah1q"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7emq5"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_803yc"]
+bg_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wbrc"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6nef"]
+bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[node name="Credits" type="Control" unique_id=1155873500]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gagih")
+
+[node name="Panel" type="Panel" parent="." unique_id=861030103]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1bamb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1987806670]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.5
+offset_top = -106.0
+offset_right = 185.5
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=97937798]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("3_orip4")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_xelri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uah1q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7emq5")
+text = "Back"
+
+[node name="Exit" type="Button" parent="HBoxContainer" unique_id=233846717]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("3_orip4")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_803yc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1wbrc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j6nef")
+text = "Exit"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1135461159]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -200.0
+offset_right = 175.5
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2116865165]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_orip4")
+theme_override_font_sizes/font_size = 32
+text = "Adam
+
+Natalia
+
+Damian"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

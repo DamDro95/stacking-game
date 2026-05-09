@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://c1cp6bdhpilcw"]
+
+[ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="1_1h4ka"]
+[ext_resource type="Script" uid="uid://doaerqugm10ja" path="res://Scripts/user_interface/pause_menu.gd" id="1_dgpn2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgpn2"]
+bg_color = Color(0.48570347, 0.48570353, 0.4857034, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h4ka"]
+bg_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b33pd"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v6ak"]
+bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=144451301]
+script = ExtResource("1_dgpn2")
+
+[node name="Panel" type="Panel" parent="." unique_id=2022114490]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel" unique_id=1880903430]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.5
+offset_top = -166.0
+offset_right = 145.5
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgpn2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/PanelContainer" unique_id=1847881961]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/PanelContainer/MarginContainer" unique_id=1141422763]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/MarginContainer/VBoxContainer" unique_id=135208679]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3529412)
+theme_override_fonts/font = ExtResource("1_1h4ka")
+theme_override_font_sizes/font_size = 30
+text = "Paused"
+
+[node name="Volume" type="Label" parent="." unique_id=1244924351]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -90.0
+offset_right = 45.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_1h4ka")
+theme_override_font_sizes/font_size = 20
+text = "Volume"
+
+[node name="Volume_Settings" type="Label" parent="." unique_id=952599878]
+offset_left = 81.0
+offset_top = 355.0
+offset_right = 161.0
+offset_bottom = 445.0
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("1_1h4ka")
+text = "Master
+Music
+Effects"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1772835954]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -43.0
+offset_right = 123.5
+offset_bottom = 53.375
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=2127242862]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/center_grabber = 50
+max_value = 10.0
+value = 5.0
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer" unique_id=1225622209]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/center_grabber = 50
+max_value = 10.0
+value = 5.0
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer" unique_id=1048185666]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/center_grabber = 50
+max_value = 10.0
+value = 5.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2120405076]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = 97.0
+offset_right = 121.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Resume" type="Button" parent="HBoxContainer" unique_id=280490476]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_constants/h_separation = 4
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_1h4ka")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_1h4ka")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b33pd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5v6ak")
+text = "Resume"
+
+[node name="Exit" type="Button" parent="HBoxContainer" unique_id=1091276347]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_constants/h_separation = 4
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_1h4ka")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_1h4ka")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b33pd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5v6ak")
+text = "Exit"
+
+[connection signal="pressed" from="HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

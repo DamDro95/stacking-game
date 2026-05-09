@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://eaoy50jwe5p4"]
 
-[ext_resource type="Script" uid="uid://7d5otclgk3ch" path="res://character_body_2d.gd" id="1_rpqav"]
-[ext_resource type="Texture2D" uid="uid://d4m5tex5dwkxl" path="res://Assets/Cheese.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://7d5otclgk3ch" path="res://Scripts/gameplay/character_body_2d.gd" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://fwx2d7bg4v3s" path="res://Assets/legs.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vtpo"]
+size = Vector2(28.5, 10.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gntrk"]
 animations = [{
@@ -20,7 +21,11 @@ animations = [{
 script = ExtResource("1_rpqav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612866858]
+position = Vector2(-0.75, -15)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_3vtpo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=522967555]
+position = Vector2(2, -15)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_gntrk")
