@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://c0f5hw3n43ka5"]
+
+[ext_resource type="Texture2D" uid="uid://dfp1s5e16i6co" path="res://Assets/ratcut.jpg" id="1_f06in"]
+[ext_resource type="Script" uid="uid://djml5fk3cadaj" path="res://Scripts/options.gd" id="1_wicxf"]
+[ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="2_wicxf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivmfp"]
+texture = ExtResource("1_f06in")
+texture_margin_top = 49.0
+modulate_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77t7g"]
+bg_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b084a"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wst1"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1hsk"]
+bg_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7qrc"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d61nt"]
+bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[node name="Options" type="Control" unique_id=893803621]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wicxf")
+
+[node name="Panel" type="Panel" parent="." unique_id=952168805]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ivmfp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=627837708]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.5
+offset_top = -106.0
+offset_right = 185.5
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=479845769]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("2_wicxf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_77t7g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b084a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wst1")
+text = "Back"
+
+[node name="Exit" type="Button" parent="HBoxContainer" unique_id=805386657]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("2_wicxf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_e1hsk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j7qrc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d61nt")
+text = "Exit"
+
+[node name="Volume" type="Label" parent="." unique_id=1778587974]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -235.0
+offset_right = 108.0
+offset_bottom = -178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_wicxf")
+theme_override_font_sizes/font_size = 48
+text = "Volume"
+
+[node name="Volume_Settings" type="Label" parent="." unique_id=1276279790]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 269.0
+offset_right = 148.0
+offset_bottom = 469.0
+theme_override_constants/line_spacing = 57
+theme_override_fonts/font = ExtResource("2_wicxf")
+theme_override_font_sizes/font_size = 24
+text = "Master
+Music
+Effects"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=790060624]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -127.75
+offset_right = 167.0
+offset_bottom = 127.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=2125309312]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/center_grabber = 50
+max_value = 10.0
+value = 5.0
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer" unique_id=1098415376]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/center_grabber = 50
+max_value = 10.0
+value = 5.0
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer" unique_id=1965379430]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/center_grabber = 50
+max_value = 10.0
+value = 5.0
+
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_meta("is_stacked", false):
 		return
-		
+
 	area.set_meta("is_stacked", true)
 	area.get_node("CollisionShape2D").set_deferred("moitorable", false)
 	area.get_node("CollisionShape2D").set_deferred("monitorable", false)
@@ -38,14 +38,20 @@ func _stack(area: Area2D) -> void:
 	
 	# Reparent
 	area.reparent(self, false)
+	
+	#stop physics processing
 	area.set_process(false)
 	
-	# Position and Stack logic
+	# Put the object on top
 	area.position = stack_marker.position
 	
-	var sprite = area.get_node("Sprite2D")
-	var item_height = abs(sprite.get_rect().size.y * sprite.scale.y)
+	#position the marker to the top of the stack
+	var sprite = area.get_node("AnimatedSprite2D")
+	var frames = sprite.get_sprite_frames()
+	var item_height = frames.get_frame_texture(sprite.animation, sprite.frame).get_size().y
+	stack_marker.position.y -= (item_height *  sprite.scale.y)
 	
-	stack_marker.position.y -= item_height
-	stack.append(area)
+	#Move the collision shape to the top
 	$Area2D.position = stack_marker.position
+
+	stack.append(area)
