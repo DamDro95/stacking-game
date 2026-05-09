@@ -6,6 +6,7 @@ var recipe: Dictionary;
 var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.tscn")
 
 signal recipe_completed()
+signal invalid_item_stacked()
 
 func new_recipe() -> void:
 	var temp_instance = stackable_object.instantiate()
@@ -27,8 +28,13 @@ func stack_calculation(area:Area2D) -> void:
 
 	if anim_name in recipe and recipe[anim_name] > 0:
 		recipe[anim_name] -= 1;
+	else:
+		invalid_item_stacked.emit()
+		return
 		
 	# Check if recipe is complete
 	var is_complete = recipe.values().all(func(v): return v == 0)
-	if is_complete:
+	if is_complete and "head" in anim_name:
 		recipe_completed.emit()
+	elif not is_complete and "head" in anim_name:
+		invalid_item_stacked.emit()
