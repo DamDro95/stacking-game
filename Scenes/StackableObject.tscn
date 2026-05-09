@@ -7,6 +7,7 @@
 
 [node name="StackableObject" type="Area2D" unique_id=1154160180]
 script = ExtResource("1_2g4t8")
+metadata/is_stacked = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1132773746]
 texture = ExtResource("1_todf2")
