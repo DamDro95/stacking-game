@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 200.0
 
 var stack: Array[Area2D] = []
 
@@ -29,8 +28,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	area.get_node("CollisionShape2D").set_deferred("monitorable", false)
 	call_deferred("_stack", area)
 	
-	AudioController.play_stack_success()
-	#AudioController.play_stack_fail()
 
 func _stack(area: Area2D) -> void:
 	# Double check it hasn't been deleted or freed

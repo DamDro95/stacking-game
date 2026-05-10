@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://7d5otclgk3ch" path="res://Scripts/gameplay/character_body_2d.gd" id="1_rpqav"]
 [ext_resource type="Texture2D" uid="uid://nehdyetbqffx" path="res://Assets/Monsters/legs01nc.png" id="2_i2w6m"]
 [ext_resource type="Texture2D" uid="uid://bl0nyneludk60" path="res://Assets/Monsters/legs02nc.png" id="3_nvvm1"]
+[ext_resource type="Script" uid="uid://cv16btexkwjvr" path="res://Scripts/gameplay/player_sprite.gd" id="4_uu53i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vtpo"]
 size = Vector2(28.5, 10.5)
@@ -27,29 +28,30 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-size = Vector2(40, 30)
+size = Vector2(15, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=826308022]
 script = ExtResource("1_rpqav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=612866858]
-position = Vector2(-0.75, -15)
+position = Vector2(0, -15)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_3vtpo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=522967555]
-position = Vector2(2, -15)
+position = Vector2(0, -15)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_gntrk")
 animation = &"legs_1"
+script = ExtResource("4_uu53i")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1184400416]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=918156257]
-position = Vector2(1, -5)
+position = Vector2(1.5, -19)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=500699139]
-position = Vector2(2, -34)
+position = Vector2(0, -34)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

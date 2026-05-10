@@ -42,5 +42,6 @@ bus = &"SFX"
 
 [node name="AmbientBubbles" type="AudioStreamPlayer2D" parent="." unique_id=1761334740]
 stream = ExtResource("7_1bbw0")
-volume_db = 5.0
+volume_db = 7.0
+pitch_scale = 1.4
 bus = &"SFX"

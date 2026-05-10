@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfp1s5e16i6co" path="res://Assets/ratcut.jpg" id="1_f06in"]
 [ext_resource type="Script" uid="uid://djml5fk3cadaj" path="res://Scripts/user_interface/options.gd" id="1_wicxf"]
 [ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="2_wicxf"]
+[ext_resource type="PackedScene" uid="uid://drh672bqnmtic" path="res://Scenes/user_interface/volume_slider.tscn" id="4_ivmfp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivmfp"]
 texture = ExtResource("1_f06in")
@@ -168,33 +169,30 @@ anchor_bottom = 0.5
 offset_left = -32.0
 offset_top = -127.75
 offset_right = 167.0
-offset_bottom = 127.75
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 73
 
-[node name="MasterSlider" type="HSlider" parent="VBoxContainer" unique_id=2125309312]
+[node name="MasterSlider" parent="VBoxContainer" unique_id=848444424 instance=ExtResource("4_ivmfp")]
 layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/center_grabber = 50
-max_value = 10.0
-value = 5.0
+bus_name = "Master"
 
-[node name="MusicSlider" type="HSlider" parent="VBoxContainer" unique_id=1098415376]
+[node name="MusicSlider" parent="VBoxContainer" unique_id=794953761 instance=ExtResource("4_ivmfp")]
 layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/center_grabber = 50
-max_value = 10.0
-value = 5.0
+bus_name = "Music"
 
-[node name="SFXSlider" type="HSlider" parent="VBoxContainer" unique_id=1965379430]
+[node name="SFXSlider" parent="VBoxContainer" unique_id=708665788 instance=ExtResource("4_ivmfp")]
 layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/center_grabber = 50
-max_value = 10.0
-value = 5.0
+bus_name = "SFX"
 
 [connection signal="mouse_entered" from="HBoxContainer/Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="mouse_entered" from="HBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="drag_ended" from="VBoxContainer/MasterSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="mouse_entered" from="VBoxContainer/MasterSlider" to="." method="_on_master_slider_mouse_entered"]
+[connection signal="drag_ended" from="VBoxContainer/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="mouse_entered" from="VBoxContainer/MusicSlider" to="." method="_on_music_slider_mouse_entered"]
+[connection signal="drag_ended" from="VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="mouse_entered" from="VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_mouse_entered"]

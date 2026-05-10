@@ -1,27 +1,75 @@
 [gd_scene format=3 uid="uid://b557uk8f3ggd1"]
 
+[ext_resource type="Script" uid="uid://c3sovisraq1ld" path="res://Scripts/user_interface/screen_overlay.gd" id="1_racfr"]
+[ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="2_anioc"]
+
 [sub_resource type="Gradient" id="Gradient_4tcwv"]
-offsets = PackedFloat32Array(0.5555556)
+offsets = PackedFloat32Array(0.51282054)
 colors = PackedColorArray(0.44705883, 0.56078434, 0, 0.19607843)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_racfr"]
 gradient = SubResource("Gradient_4tcwv")
 
 [sub_resource type="Gradient" id="Gradient_racfr"]
-offsets = PackedFloat32Array(0, 0.525641, 1)
-colors = PackedColorArray(0.25882354, 0.42745098, 0, 0.45490196, 0, 0, 0, 0, 0.25882354, 0.42745098, 0, 0.45490196)
+offsets = PackedFloat32Array(0, 0.51282054, 1)
+colors = PackedColorArray(0.25882354, 0.42745098, 0, 0.49019608, 0, 0, 0, 0, 0.25882354, 0.42745098, 0, 0.49019608)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_anioc"]
 gradient = SubResource("Gradient_racfr")
 
+[sub_resource type="Gradient" id="Gradient_anioc"]
+offsets = PackedFloat32Array(0, 0.21367522, 0.8034188, 1)
+colors = PackedColorArray(0, 0, 0, 0.39215687, 0.09019608, 0.3137255, 0.21960784, 0.11764706, 0.09411765, 0.33333334, 0.23137255, 0.11764706, 0, 0, 0, 0.39215687)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fgiyv"]
+gradient = SubResource("Gradient_anioc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_racfr"]
+bg_color = Color(0, 0, 0, 0.50980395)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
 [node name="ScreenOverlay" type="CanvasLayer" unique_id=493731240]
+script = ExtResource("1_racfr")
 
 [node name="Overlay" type="Sprite2D" parent="." unique_id=1811864673]
 position = Vector2(200, 400)
-scale = Vector2(6.25, 12.5)
+scale = Vector2(5.25, 12.5)
 texture = SubResource("GradientTexture2D_racfr")
 
 [node name="ColourGradient" type="Sprite2D" parent="." unique_id=2108474227]
 position = Vector2(200, 399.99997)
-scale = Vector2(6.25, 12.499999)
+scale = Vector2(5.25, 12.499999)
 texture = SubResource("GradientTexture2D_anioc")
+
+[node name="Highlight" type="Sprite2D" parent="." unique_id=742645912]
+position = Vector2(200, 400)
+scale = Vector2(5.2499995, 12.5)
+texture = SubResource("GradientTexture2D_fgiyv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1555257695]
+offset_left = 200.0
+offset_top = 8.0
+offset_right = 376.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=834639274]
+offset_right = 400.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_racfr")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=118731049]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=847369186]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_anioc")
+theme_override_font_sizes/font_size = 18
+text = "Parts Needed"

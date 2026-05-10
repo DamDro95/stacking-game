@@ -28,6 +28,7 @@ AudioController="*uid://c8fm10cgp0qof"
 
 window/size/viewport_width=400
 window/size/viewport_height=800
+window/stretch/mode="viewport"
 
 [input]
 

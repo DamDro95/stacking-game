@@ -13,12 +13,17 @@ func _ready() -> void:
 	$PauseMenu.hide()
 	randomize()
 	
-	$CharacterBody2D.item_stacked.connect(recipe_manager.stack_calculation)
+	$Player.item_stacked.connect(recipe_manager.stack_calculation)
 	recipe_manager.recipe_completed.connect(game_win)
 	recipe_manager.invalid_item_stacked.connect(player_manager.apply_damage)
+	recipe_manager.valid_item_stacked.connect(valid_item_stacked)
 	player_manager.player_died.connect(game_lose)
 	
 	recipe_manager.new_recipe()
+	
+	$ScreenOverlay.set_recipe_ui(recipe_manager.recipe)
+	
+	AudioController.play_ambient_bubbles()
 	
 func get_a_random_position(p1: Vector2, p2: Vector2) -> Vector2:
 	# Get random x and y values
@@ -38,6 +43,9 @@ func spawn_stackable():
 	# Sets the position of the spawn location when instantiating
 	stackable_instance.set_position(spawn_location)
 
+func valid_item_stacked(Key: String, recipe: Dictionary):
+	$ScreenOverlay.update_ui(Key, recipe)
+
 # Spawning Stackables at a specified interval
 func _on_spawn_timer_timeout() -> void:
 	spawn_stackable()
@@ -47,7 +55,9 @@ func _on_interval_timer_timeout() -> void:
 	$SpawnTimer.wait_time *= 0.9
 	
 func game_win() -> void:
-	print('Winner')
+	SceneLoader.load_scene("uid://dyemqgrwngmtn")
+	print("winner")
 
 func game_lose() -> void:
+	SceneLoader.load_scene("uid://cnaea16dc6f13")
 	print('Lose') 

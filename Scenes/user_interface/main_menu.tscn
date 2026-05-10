@@ -136,7 +136,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r3xwe")
 
-[node name="Panel" type="Panel" parent="." unique_id=365248267]
+[node name="BG" type="Panel" parent="." unique_id=365248267]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
