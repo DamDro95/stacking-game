@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var stackable_spawn_point_1: Vector2 = Vector2(-90,-400)
-@export var Stackable_spawn_point_2: Vector2 = Vector2(90,-400)
+@export var stackable_spawn_point_1: Vector2 = Vector2(-70,-400)
+@export var Stackable_spawn_point_2: Vector2 = Vector2(70,-400)
 
 @onready var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.tscn")
 @onready var is_paused: bool = false
@@ -61,8 +61,6 @@ func _on_interval_timer_timeout() -> void:
 	
 func game_win() -> void:
 	SceneLoader.load_scene("uid://dyemqgrwngmtn")
-	print("winner")
 
 func game_lose() -> void:
 	SceneLoader.load_scene("uid://cnaea16dc6f13")
-	print('Lose') 
