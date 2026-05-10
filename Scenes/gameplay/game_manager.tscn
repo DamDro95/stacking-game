@@ -9,32 +9,33 @@
 
 [node name="Node2D" type="Node2D" unique_id=1268358540]
 script = ExtResource("1_c0ygb")
-point_1 = Vector2(-80, -410)
-point_2 = Vector2(80, -410)
+point_1 = Vector2(-60, -410)
+point_2 = Vector2(60, -410)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2006666752]
 offset = Vector2(0, -190)
 zoom = Vector2(2, 2)
 
-[node name="CharacterBody2D" parent="." unique_id=826308022 instance=ExtResource("2_iamcd")]
+[node name="Player" parent="." unique_id=864803538 instance=ExtResource("2_iamcd")]
 
 [node name="Map" parent="." unique_id=457413062 instance=ExtResource("3_d3e18")]
-position = Vector2(110, 0)
+position = Vector2(96, 0)
 
 [node name="Map2" parent="." unique_id=271718441 instance=ExtResource("3_d3e18")]
-position = Vector2(-110, 0)
-
-[node name="ScreenOverlay" parent="." unique_id=493731240 instance=ExtResource("4_d3e18")]
+position = Vector2(-96, 0)
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=207202423]
 wait_time = 3.0
 autostart = true
 
 [node name="IntervalTimer" type="Timer" parent="." unique_id=1902297915]
+wait_time = 10.0
 autostart = true
 
 [node name="KillZone" parent="." unique_id=256014582 instance=ExtResource("4_ngl4v")]
 position = Vector2(0, 59)
+
+[node name="ScreenOverlay" parent="." unique_id=493731240 instance=ExtResource("4_d3e18")]
 
 [node name="PauseMenu" parent="." unique_id=144451301 instance=ExtResource("5_iamcd")]
 

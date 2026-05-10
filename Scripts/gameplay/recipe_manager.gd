@@ -7,7 +7,8 @@ var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.
 var head_items:Array = []
 var body_items:Array = []
 
-signal recipe_completed()
+signal recipe_completed(recipe: Dictionary)
+signal valid_item_stacked(Key: String, recipe: Dictionary)
 signal invalid_item_stacked()
 
 func _init():
@@ -34,13 +35,16 @@ func stack_calculation(area:Area2D) -> void:
 	
 	if anim_name in recipe and recipe[anim_name] > 0:
 		recipe[anim_name] -= 1;
+		valid_item_stacked.emit(anim_name, recipe)
+		AudioController.play_stack_success()
 	else:
 		invalid_item_stacked.emit()
+		AudioController.play_stack_fail()
 		return
 		
 	# Check if recipe is complete
 	var is_complete = recipe.values().all(func(v): return v == 0)
-	if is_complete and "head" in anim_name:
+	if is_complete: #and "head" in anim_name:
 		recipe_completed.emit()
-	elif not is_complete and "head" in anim_name:
-		invalid_item_stacked.emit()
+	#elif not is_complete and "head" in anim_name:
+		#invalid_item_stacked.emit()

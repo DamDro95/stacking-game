@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://evr4utuqbnyf" path="res://Assets/Monsters/body03nc.png" id="4_evbdq"]
 [ext_resource type="Script" uid="uid://dl5j2uounawlu" path="res://Scripts/gameplay/animated_sprite_2d.gd" id="4_p64fn"]
 [ext_resource type="Texture2D" uid="uid://dy1wjng8ca2y5" path="res://Assets/Monsters/body02nc.png" id="4_uvgx6"]
+[ext_resource type="Texture2D" uid="uid://cuix0sxrj125y" path="res://Assets/Monsters/body04nc.png" id="5_e7hpd"]
 [ext_resource type="Texture2D" uid="uid://cyxf4dys6c8g6" path="res://Assets/Monsters/head01nc.png" id="5_mlmbu"]
 [ext_resource type="Texture2D" uid="uid://cv8curfx8caq4" path="res://Assets/Monsters/head02nc.png" id="6_e7hpd"]
 [ext_resource type="Texture2D" uid="uid://dhq6i7545mcm" path="res://Assets/Monsters/head03nc.png" id="7_oeoog"]
@@ -12,7 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://di8u2482e15tg" path="res://Assets/Monsters/wings02nc.png" id="9_g8ryw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g4t8"]
-size = Vector2(20, 17)
+size = Vector2(12, 9.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeoog"]
+atlas = ExtResource("5_e7hpd")
+region = Rect2(0, 0, 413, 310)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24h56"]
 animations = [{
@@ -40,7 +45,10 @@ animations = [{
 "name": &"body_3",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeoog")
+}],
 "loop": true,
 "name": &"body_4",
 "speed": 5.0
@@ -90,12 +98,12 @@ animations = [{
 script = ExtResource("1_2g4t8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123736785]
-position = Vector2(0, 3)
+position = Vector2(2, 4.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_2g4t8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=216880868]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_24h56")
-animation = &"wings_1"
+animation = &"body_4"
 script = ExtResource("4_p64fn")

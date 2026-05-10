@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://cnaea16dc6f13"]
+
+[ext_resource type="Script" uid="uid://d2fshssir2kth" path="res://Scripts/user_interface/lose_screen.gd" id="1_e41dl"]
+[ext_resource type="Texture2D" uid="uid://dfp1s5e16i6co" path="res://Assets/ratcut.jpg" id="1_i33ix"]
+[ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="2_e41dl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rgrs"]
+texture = ExtResource("1_i33ix")
+modulate_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v38m"]
+bg_color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.80784315)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2ten"]
+bg_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgy0e"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqpee"]
+bg_color = Color(0.70380783, 0.70380783, 0.70380783, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.80784315)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkc0f"]
+bg_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c80si"]
+bg_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5spw"]
+bg_color = Color(0, 0, 0, 0.50980395)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="LoseScreen" type="Control" unique_id=1314068684]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e41dl")
+
+[node name="Panel" type="Panel" parent="." unique_id=446678245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1rgrs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1277049990]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 158.0
+offset_right = 115.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Next" type="Button" parent="Panel/VBoxContainer" unique_id=652210344]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("2_e41dl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0v38m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e2ten")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgy0e")
+text = "Try Again"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer" unique_id=878221617]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = ExtResource("2_e41dl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqpee")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lkc0f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c80si")
+text = "Exit"
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel" unique_id=960421130]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.5
+offset_top = -119.5
+offset_right = 145.5
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5spw")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/PanelContainer" unique_id=140521343]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/PanelContainer/MarginContainer" unique_id=1986899391]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="Title" type="Label" parent="Panel/PanelContainer/MarginContainer/VBoxContainer" unique_id=288228506]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3529412)
+theme_override_fonts/font = ExtResource("2_e41dl")
+theme_override_font_sizes/font_size = 30
+text = "Failure!"
+
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Next" to="." method="_on_next_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="mouse_entered" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
