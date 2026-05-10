@@ -2,19 +2,28 @@
 
 [ext_resource type="Script" uid="uid://c605qutxb0wj8" path="res://Scripts/gameplay/node_2d.gd" id="1_c0ygb"]
 [ext_resource type="PackedScene" uid="uid://eaoy50jwe5p4" path="res://Scenes/gameplay/Player.tscn" id="2_iamcd"]
+[ext_resource type="Texture2D" uid="uid://dbv0qdltu8sj0" path="res://Assets/BACKGROUND.png" id="2_ngl4v"]
 [ext_resource type="PackedScene" uid="uid://gxywdaab048m" path="res://Scenes/gameplay/Boundry.tscn" id="3_d3e18"]
-[ext_resource type="PackedScene" path="res://Scenes/user_interface/screen_overlay.tscn" id="4_d3e18"]
+[ext_resource type="PackedScene" uid="uid://b557uk8f3ggd1" path="res://Scenes/user_interface/screen_overlay.tscn" id="4_d3e18"]
 [ext_resource type="PackedScene" uid="uid://1xib5sdxe3q5" path="res://Scenes/gameplay/kill_zone.tscn" id="4_ngl4v"]
 [ext_resource type="PackedScene" uid="uid://c1cp6bdhpilcw" path="res://Scenes/user_interface/pause_menu.tscn" id="5_iamcd"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngl4v"]
+texture = ExtResource("2_ngl4v")
+
 [node name="Node2D" type="Node2D" unique_id=1268358540]
 script = ExtResource("1_c0ygb")
-point_1 = Vector2(-60, -410)
-point_2 = Vector2(60, -410)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2006666752]
 offset = Vector2(0, -190)
 zoom = Vector2(2, 2)
+
+[node name="Panel" type="Panel" parent="." unique_id=1175068628]
+offset_left = -104.0
+offset_top = -544.0
+offset_right = 112.0
+offset_bottom = 9.799194
+theme_override_styles/panel = SubResource("StyleBoxTexture_ngl4v")
 
 [node name="Player" parent="." unique_id=864803538 instance=ExtResource("2_iamcd")]
 
