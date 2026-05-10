@@ -4,15 +4,21 @@ class_name RecipeManager
 
 var recipe: Dictionary;
 var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.tscn")
+var head_items:Array = []
+var body_items:Array = []
 
 signal recipe_completed()
 signal invalid_item_stacked()
 
-func new_recipe() -> void:
+func _init():
 	var temp_instance = stackable_object.instantiate()
 	var anim_sprite = temp_instance.get_node_or_null("AnimatedSprite2D")
 	var items = Array(anim_sprite.sprite_frames.get_animation_names())
 	
+	head_items = items.filter(func(item): return "head" in item)
+	body_items = items.filter(func(item): return "head" not in item)
+	
+func new_recipe() -> void:
 	# Randomize the seed (crucial so you don't get the same "random" results every time)
 	randomize() 
 	items.shuffle()
@@ -25,7 +31,7 @@ func new_recipe() -> void:
 func stack_calculation(area:Area2D) -> void:
 	var anim_sprit = area.get_node('AnimatedSprite2D')
 	var anim_name = anim_sprit.animation
-
+	
 	if anim_name in recipe and recipe[anim_name] > 0:
 		recipe[anim_name] -= 1;
 	else:
