@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c605qutxb0wj8" path="res://Scripts/gameplay/node_2d.gd" id="1_c0ygb"]
 [ext_resource type="PackedScene" uid="uid://eaoy50jwe5p4" path="res://Scenes/gameplay/Player.tscn" id="2_iamcd"]
 [ext_resource type="PackedScene" uid="uid://gxywdaab048m" path="res://Scenes/gameplay/Boundry.tscn" id="3_d3e18"]
-[ext_resource type="PackedScene" uid="uid://b557uk8f3ggd1" path="res://Scenes/user_interface/screen_overlay.tscn" id="4_d3e18"]
+[ext_resource type="PackedScene" path="res://Scenes/user_interface/screen_overlay.tscn" id="4_d3e18"]
 [ext_resource type="PackedScene" uid="uid://1xib5sdxe3q5" path="res://Scenes/gameplay/kill_zone.tscn" id="4_ngl4v"]
 [ext_resource type="PackedScene" uid="uid://c1cp6bdhpilcw" path="res://Scenes/user_interface/pause_menu.tscn" id="5_iamcd"]
 
