@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cunnoexbwjvs3"]
 
-[ext_resource type="Script" uid="uid://de4tyfve8bk5t" path="res://Scripts/credits.gd" id="1_gagih"]
+[ext_resource type="Script" uid="uid://de4tyfve8bk5t" path="res://Scripts/user_interface/credits.gd" id="1_gagih"]
 [ext_resource type="Texture2D" uid="uid://dfp1s5e16i6co" path="res://Assets/ratcut.jpg" id="2_g0ic8"]
 [ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="3_orip4"]
 
@@ -16,8 +16,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uah1q"]
-bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gagih"]
+bg_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -45,8 +45,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wbrc"]
-bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0ic8"]
+bg_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -104,11 +104,12 @@ theme_override_constants/separation = 100
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("3_orip4")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_xelri")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uah1q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gagih")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7emq5")
 text = "Back"
 
@@ -117,11 +118,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("3_orip4")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_803yc")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1wbrc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0ic8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j6nef")
 text = "Exit"
 
@@ -152,5 +154,7 @@ Damian"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="mouse_entered" from="HBoxContainer/Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

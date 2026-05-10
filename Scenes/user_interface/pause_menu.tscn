@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://doaerqugm10ja" path="res://Scripts/user_interface/pause_menu.gd" id="1_dgpn2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgpn2"]
-bg_color = Color(0.48570347, 0.48570353, 0.4857034, 1)
+bg_color = Color(0.29586664, 0.29586646, 0.29586664, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -22,7 +22,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b33pd"]
-bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+bg_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -34,6 +34,17 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v6ak"]
 bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_top = 1.0
+expand_margin_right = 4.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xr64l"]
+bg_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -171,6 +182,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_constants/h_separation = 4
 theme_override_constants/line_spacing = 0
@@ -187,15 +199,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_constants/h_separation = 4
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("1_1h4ka")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_1h4ka")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b33pd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xr64l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5v6ak")
 text = "Exit"
 
+[connection signal="mouse_entered" from="HBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -11,6 +11,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$PauseMenu.hide()
+	AudioController.play_ambient_bubbles()
 	randomize()
 	
 	$CharacterBody2D.item_stacked.connect(recipe_manager.stack_calculation)

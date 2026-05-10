@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b557uk8f3ggd1"]
+
+[sub_resource type="Gradient" id="Gradient_4tcwv"]
+offsets = PackedFloat32Array(0.5555556)
+colors = PackedColorArray(0.44705883, 0.56078434, 0, 0.19607843)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_racfr"]
+gradient = SubResource("Gradient_4tcwv")
+
+[sub_resource type="Gradient" id="Gradient_racfr"]
+offsets = PackedFloat32Array(0, 0.525641, 1)
+colors = PackedColorArray(0.25882354, 0.42745098, 0, 0.45490196, 0, 0, 0, 0, 0.25882354, 0.42745098, 0, 0.45490196)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_anioc"]
+gradient = SubResource("Gradient_racfr")
+
+[node name="ScreenOverlay" type="CanvasLayer" unique_id=493731240]
+
+[node name="Overlay" type="Sprite2D" parent="." unique_id=1811864673]
+position = Vector2(200, 400)
+scale = Vector2(6.25, 12.5)
+texture = SubResource("GradientTexture2D_racfr")
+
+[node name="ColourGradient" type="Sprite2D" parent="." unique_id=2108474227]
+position = Vector2(200, 399.99997)
+scale = Vector2(6.25, 12.499999)
+texture = SubResource("GradientTexture2D_anioc")
