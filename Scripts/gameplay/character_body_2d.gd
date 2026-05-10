@@ -7,6 +7,8 @@ var stack: Array[Area2D] = []
 
 @onready var stack_marker = $Marker2D
 
+signal item_stacked
+
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -52,9 +54,10 @@ func _stack(area: Area2D) -> void:
 	var sprite = area.get_node("AnimatedSprite2D")
 	var frames = sprite.get_sprite_frames()
 	var item_height = frames.get_frame_texture(sprite.animation, sprite.frame).get_size().y
-	stack_marker.position.y -= (item_height *  sprite.scale.y)
+	stack_marker.position.y -= (item_height *  sprite.scale.y) - 15
 	
 	#Move the collision shape to the top
 	$Area2D.position = stack_marker.position
 
 	stack.append(area)
+	item_stacked.emit(area)
