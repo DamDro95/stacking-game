@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var point_1: Vector2 = Vector2(-90,-400)
-@export var point_2: Vector2 = Vector2(90,-400)
+@export var stackable_spawn_point_1: Vector2 = Vector2(-90,-400)
+@export var Stackable_spawn_point_2: Vector2 = Vector2(90,-400)
 
 @onready var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.tscn")
 @onready var is_paused: bool = false
@@ -18,6 +18,7 @@ func _ready() -> void:
 	recipe_manager.invalid_item_stacked.connect(player_manager.apply_damage)
 	recipe_manager.valid_item_stacked.connect(valid_item_stacked)
 	player_manager.player_died.connect(game_lose)
+	player_manager.took_damage.connect(health_changed)
 	
 	recipe_manager.new_recipe()
 	
@@ -39,12 +40,16 @@ func spawn_stackable():
 	# Places the instanced Stackable into the Scene Tree
 	add_child(stackable_instance)
 	# Generate a spawn location
-	var spawn_location: Vector2 = get_a_random_position(point_1, point_2)
+	var spawn_location: Vector2 = get_a_random_position(stackable_spawn_point_1, Stackable_spawn_point_2)
 	# Sets the position of the spawn location when instantiating
 	stackable_instance.set_position(spawn_location)
 
 func valid_item_stacked(Key: String, recipe: Dictionary):
 	$ScreenOverlay.update_ui(Key, recipe)
+
+func health_changed(health: int):
+	# call the function in screen overlay which might look something like:
+	$ScreenOverlay.update_hearts(health)
 
 # Spawning Stackables at a specified interval
 func _on_spawn_timer_timeout() -> void:

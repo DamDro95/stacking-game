@@ -4,6 +4,7 @@ var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.
 var custom_font = load("res://Assets/PixelEmulator-xq08.ttf")
 
 var label_collection: Dictionary = {}
+var hearts_list: Array[TextureRect]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +18,10 @@ func set_recipe_ui(recipe: Dictionary):
 	var anim_sprite = temp_instance.get_node_or_null("AnimatedSprite2D")
 	
 	var texture_container = []
-	var texture_position = 40
+	var texture_position = 5
 	
 	var label_container = []
-	var label_position = 80
+	var label_position = 45
 	
 	for Key in recipe:
 		# Displaying which Parts with TextureRects
@@ -47,3 +48,11 @@ func set_recipe_ui(recipe: Dictionary):
 		var amount = str(recipe[Key])
 		labels.text = amount
 		label_collection[Key] = labels
+
+func update_hearts(health: int):
+	if health == 2:
+		$VBoxContainer/heart/AnimatedSprite2D.play("empty")
+	elif health == 1:
+		$VBoxContainer/heart2/AnimatedSprite2D.play("empty")
+	elif health == 0:
+		$VBoxContainer/heart3/AnimatedSprite2D.play("empty")
