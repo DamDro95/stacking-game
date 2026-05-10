@@ -1,28 +1,39 @@
 [gd_scene format=3 uid="uid://c0f5hw3n43ka5"]
 
-[ext_resource type="Texture2D" uid="uid://dfp1s5e16i6co" path="res://Assets/ratcut.jpg" id="1_f06in"]
 [ext_resource type="Script" uid="uid://djml5fk3cadaj" path="res://Scripts/user_interface/options.gd" id="1_wicxf"]
-[ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="2_wicxf"]
+[ext_resource type="Texture2D" uid="uid://dbv0qdltu8sj0" path="res://Assets/BACKGROUND.png" id="2_ivmfp"]
+[ext_resource type="FontFile" uid="uid://cm6jehm2mh04r" path="res://Assets/Martius-LV9L4.ttf" id="3_ivmfp"]
 [ext_resource type="PackedScene" uid="uid://drh672bqnmtic" path="res://Scenes/user_interface/volume_slider.tscn" id="4_ivmfp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivmfp"]
-texture = ExtResource("1_f06in")
+texture = ExtResource("2_ivmfp")
 texture_margin_top = 49.0
 modulate_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b084a"]
+bg_color = Color(0, 0, 0, 0.50980395)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77t7g"]
 bg_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wicxf"]
 bg_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 expand_margin_left = 4.0
 expand_margin_top = 1.0
 expand_margin_right = 4.0
@@ -30,10 +41,10 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wst1"]
 bg_color = Color(0.9254902, 0.9254902, 0.9254902, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 expand_margin_left = 4.0
 expand_margin_top = 1.0
 expand_margin_right = 4.0
@@ -41,17 +52,17 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1hsk"]
 bg_color = Color(0.7019608, 0.7019608, 0.7019608, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivmfp"]
 bg_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 expand_margin_left = 4.0
 expand_margin_top = 1.0
 expand_margin_right = 4.0
@@ -59,10 +70,10 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d61nt"]
 bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 expand_margin_left = 4.0
 expand_margin_top = 1.0
 expand_margin_right = 4.0
@@ -86,6 +97,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ivmfp")
 
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1421442540]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 368.0
+offset_bottom = 512.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b084a")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=627837708]
 layout_mode = 1
 anchors_preset = 7
@@ -93,13 +112,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -185.5
+offset_left = -168.0
 offset_top = -106.0
-offset_right = 185.5
+offset_right = 168.0
 offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 100
+theme_override_constants/separation = 10
 
 [node name="Back" type="Button" parent="HBoxContainer" unique_id=479845769]
 layout_mode = 2
@@ -107,8 +126,8 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
-theme_override_fonts/font = ExtResource("2_wicxf")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_ivmfp")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_77t7g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wicxf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6wst1")
@@ -121,8 +140,8 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
-theme_override_fonts/font = ExtResource("2_wicxf")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_ivmfp")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_e1hsk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ivmfp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_d61nt")
@@ -141,19 +160,21 @@ offset_right = 108.0
 offset_bottom = -178.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_wicxf")
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = ExtResource("3_ivmfp")
+theme_override_font_sizes/font_size = 72
 text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Volume_Settings" type="Label" parent="." unique_id=1276279790]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 269.0
-offset_right = 148.0
-offset_bottom = 469.0
-theme_override_constants/line_spacing = 57
-theme_override_fonts/font = ExtResource("2_wicxf")
-theme_override_font_sizes/font_size = 24
+offset_left = 72.0
+offset_top = 264.0
+offset_right = 162.0
+offset_bottom = 468.0
+theme_override_constants/line_spacing = 47
+theme_override_fonts/font = ExtResource("3_ivmfp")
+theme_override_font_sizes/font_size = 36
 text = "Master
 Music
 SFX"
@@ -166,13 +187,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
+offset_left = -24.0
 offset_top = -127.75
-offset_right = 167.0
+offset_right = 128.0
 offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 73
+theme_override_constants/separation = 70
 
 [node name="MasterSlider" parent="VBoxContainer" unique_id=848444424 instance=ExtResource("4_ivmfp")]
 layout_mode = 2

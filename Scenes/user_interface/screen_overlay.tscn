@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://b557uk8f3ggd1"]
 
 [ext_resource type="Script" uid="uid://c3sovisraq1ld" path="res://Scripts/user_interface/screen_overlay.gd" id="1_racfr"]
-[ext_resource type="FontFile" uid="uid://be3ulcs2pdgho" path="res://Assets/PixelEmulator-xq08.ttf" id="2_anioc"]
+[ext_resource type="FontFile" uid="uid://cm6jehm2mh04r" path="res://Assets/Martius-LV9L4.ttf" id="2_e1gkp"]
 [ext_resource type="PackedScene" uid="uid://dpu2syi0c16he" path="res://Scenes/misc/animated_sprite_2d.tscn" id="2_fgiyv"]
+
+[sub_resource type="Gradient" id="Gradient_fgiyv"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 0.5882353, 0.5176471, 0.5176471, 0.5176471, 0, 0, 0, 0, 0.5882353)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e1gkp"]
+gradient = SubResource("Gradient_fgiyv")
 
 [sub_resource type="Gradient" id="Gradient_4tcwv"]
 offsets = PackedFloat32Array(0.51282054)
@@ -13,14 +20,14 @@ gradient = SubResource("Gradient_4tcwv")
 
 [sub_resource type="Gradient" id="Gradient_racfr"]
 offsets = PackedFloat32Array(0, 0.51282054, 1)
-colors = PackedColorArray(0.25882354, 0.42745098, 0, 0.49019608, 0, 0, 0, 0, 0.25882354, 0.42745098, 0, 0.49019608)
+colors = PackedColorArray(0.25882354, 0.42745098, 0, 0.15686275, 0, 0, 0, 0, 0.25882354, 0.42745098, 0, 0.15686275)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_anioc"]
 gradient = SubResource("Gradient_racfr")
 
 [sub_resource type="Gradient" id="Gradient_anioc"]
 offsets = PackedFloat32Array(0, 0.21367522, 0.8034188, 1)
-colors = PackedColorArray(0, 0, 0, 0.39215687, 0.09019608, 0.3137255, 0.21960784, 0.11764706, 0.09411765, 0.33333334, 0.23137255, 0.11764706, 0, 0, 0, 0.39215687)
+colors = PackedColorArray(0, 0, 0, 0.39215687, 0.09019608, 0.3137255, 0.21960784, 0.039215688, 0.09411765, 0.33333334, 0.23137255, 0.039215688, 0, 0, 0, 0.39215687)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fgiyv"]
 gradient = SubResource("Gradient_anioc")
@@ -34,6 +41,11 @@ border_width_bottom = 3
 
 [node name="ScreenOverlay" type="CanvasLayer" unique_id=493731240]
 script = ExtResource("1_racfr")
+
+[node name="BGShadows" type="Sprite2D" parent="." unique_id=1458291257]
+position = Vector2(200.00002, 400.00006)
+scale = Vector2(6.2500005, 12.500001)
+texture = SubResource("GradientTexture2D_e1gkp")
 
 [node name="Overlay" type="Sprite2D" parent="." unique_id=1811864673]
 position = Vector2(200, 400)
@@ -65,8 +77,8 @@ theme_override_constants/margin_bottom = 10
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=847369186]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_anioc")
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("2_e1gkp")
+theme_override_font_sizes/font_size = 28
 text = "Parts Needed"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=467996318]

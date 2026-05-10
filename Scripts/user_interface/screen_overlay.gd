@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var stackable_object: Resource = preload("res://Scenes/gameplay/StackableObject.tscn")
-var custom_font = load("res://Assets/PixelEmulator-xq08.ttf")
+var custom_font = load("res://Assets/Martius-LV9L4.ttf")
 
 var label_collection: Dictionary = {}
 var hearts_list: Array[TextureRect]
@@ -39,6 +39,7 @@ func set_recipe_ui(recipe: Dictionary):
 		# Displaying # of Parts with Labels
 		var labels = Label.new()
 		labels.add_theme_font_override("font", custom_font)
+		labels.add_theme_font_size_override("font_size", 24)
 		
 		label_container.append(labels)
 		add_child(labels)
