@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://csjmvhbtubnx0"]
+
+[ext_resource type="Texture2D" uid="uid://dbv0qdltu8sj0" path="res://assets/BACKGROUND.png" id="1_p3ir5"]
+[ext_resource type="Script" uid="uid://b4ok2odr5k8ff" path="res://src/map/map.gd" id="2_wb0hv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngl4v"]
+texture = ExtResource("1_p3ir5")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1a5qu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vfn15"]
+distance = 38.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wb0hv"]
+distance = 38.0
+
+[node name="Map" type="Panel" unique_id=976458139]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ngl4v")
+script = ExtResource("2_wb0hv")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2076962527]
+wait_time = 3.0
+autostart = true
+
+[node name="IntervalTimer" type="Timer" parent="." unique_id=1235487423]
+wait_time = 10.0
+autostart = true
+
+[node name="KillZone" type="Area2D" parent="." unique_id=1114938392]
+position = Vector2(200, 810)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=865651836]
+shape = SubResource("WorldBoundaryShape2D_1a5qu")
+
+[node name="BoundryLeft" type="StaticBody2D" parent="." unique_id=801050120]
+position = Vector2(0, 800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundryLeft" unique_id=175372504]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_vfn15")
+
+[node name="BoundryRight" type="StaticBody2D" parent="." unique_id=1900940962]
+position = Vector2(400, 800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundryRight" unique_id=1047069148]
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_wb0hv")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="area_entered" from="KillZone" to="." method="_on_kill_zone_area_entered"]

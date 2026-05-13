@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://1mw26pj36kag"]
+
+[ext_resource type="Script" uid="uid://baqt0uv3g63ns" path="res://src/item/item.gd" id="1_hnrw0"]
+[ext_resource type="Texture2D" uid="uid://cuuk52nw0wx6i" path="res://assets/monsters/body01nc.png" id="2_q0ety"]
+[ext_resource type="Texture2D" uid="uid://dy1wjng8ca2y5" path="res://assets/monsters/body02nc.png" id="3_b1gh5"]
+[ext_resource type="Texture2D" uid="uid://evr4utuqbnyf" path="res://assets/monsters/body03nc.png" id="4_6b2v3"]
+[ext_resource type="Texture2D" uid="uid://cuix0sxrj125y" path="res://assets/monsters/body04nc.png" id="5_gdkek"]
+[ext_resource type="Texture2D" uid="uid://cyxf4dys6c8g6" path="res://assets/monsters/head01nc.png" id="6_qkood"]
+[ext_resource type="Texture2D" uid="uid://cv8curfx8caq4" path="res://assets/monsters/head02nc.png" id="7_ewoys"]
+[ext_resource type="Texture2D" uid="uid://dhq6i7545mcm" path="res://assets/monsters/head03nc.png" id="8_fdwu8"]
+[ext_resource type="Texture2D" uid="uid://bhb7f5b28xf0s" path="res://assets/monsters/wings01nc.png" id="9_or328"]
+[ext_resource type="Texture2D" uid="uid://di8u2482e15tg" path="res://assets/monsters/wings02nc.png" id="10_a7yrd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeoog"]
+atlas = ExtResource("5_gdkek")
+region = Rect2(0, 0, 413, 310)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24h56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q0ety")
+}],
+"loop": true,
+"name": &"body_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b1gh5")
+}],
+"loop": true,
+"name": &"body_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6b2v3")
+}],
+"loop": true,
+"name": &"body_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeoog")
+}],
+"loop": true,
+"name": &"body_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qkood")
+}],
+"loop": true,
+"name": &"head_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ewoys")
+}],
+"loop": true,
+"name": &"head_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fdwu8")
+}],
+"loop": true,
+"name": &"head_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_or328")
+}],
+"loop": true,
+"name": &"wings_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_a7yrd")
+}],
+"loop": true,
+"name": &"wings_2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g4t8"]
+size = Vector2(29, 21.5)
+
+[node name="StackableObject" type="Area2D" unique_id=1154160180 groups=["stackable"]]
+script = ExtResource("1_hnrw0")
+metadata/is_stacked = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=216880868]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_24h56")
+animation = &"body_4"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123736785]
+position = Vector2(44, 41)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_2g4t8")

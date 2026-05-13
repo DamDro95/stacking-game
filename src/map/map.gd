@@ -1,0 +1,32 @@
+extends Panel
+
+
+@export var stackable_spawn_point_1: Vector2 = Vector2(100,0)
+@export var Stackable_spawn_point_2: Vector2 = Vector2(300,0)
+
+@onready var stackable_object: Resource = preload("res://src/item/item.tscn")
+	
+func _on_kill_zone_area_entered(item) -> void:
+	item.queue_free()
+
+# Spawning Stackables at a specified interval
+func _on_spawn_timer_timeout() -> void:
+	spawn_stackable()
+
+func spawn_stackable():
+	# Creates an instance of the Stackable Object
+	var stackable_instance: Node = stackable_object.instantiate()
+	# Places the instanced Stackable into the Scene Tree
+	add_child(stackable_instance)
+	# Generate a spawn location
+	var spawn_location: Vector2 = get_a_random_position(stackable_spawn_point_1, Stackable_spawn_point_2)
+	# Sets the position of the spawn location when instantiating
+	stackable_instance.set_position(spawn_location)
+
+func get_a_random_position(p1: Vector2, p2: Vector2) -> Vector2:
+	# Get random x and y values
+	var x_value: float = randf_range(p1.x, p2.x)
+	var y_value: float = randf_range(p1.y, p2.y)
+	# Set the random values into a Vector2
+	var random_position: Vector2 = Vector2(x_value, y_value)
+	return(random_position)

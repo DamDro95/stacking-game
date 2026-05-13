@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://b557uk8f3ggd1"]
+
+[ext_resource type="Script" uid="uid://c3sovisraq1ld" path="res://src/ui/ui.gd" id="1_racfr"]
+[ext_resource type="FontFile" uid="uid://cm6jehm2mh04r" path="res://assets/Martius-LV9L4.ttf" id="2_e1gkp"]
+[ext_resource type="PackedScene" uid="uid://dpu2syi0c16he" path="res://src/ui/animated_sprite_2d.tscn" id="2_fgiyv"]
+
+[sub_resource type="Gradient" id="Gradient_fgiyv"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 0.5882353, 0.5176471, 0.5176471, 0.5176471, 0, 0, 0, 0, 0.5882353)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e1gkp"]
+gradient = SubResource("Gradient_fgiyv")
+
+[sub_resource type="Gradient" id="Gradient_4tcwv"]
+offsets = PackedFloat32Array(0.51282054)
+colors = PackedColorArray(0.44705883, 0.56078434, 0, 0.19607843)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_racfr"]
+gradient = SubResource("Gradient_4tcwv")
+
+[sub_resource type="Gradient" id="Gradient_racfr"]
+offsets = PackedFloat32Array(0, 0.51282054, 1)
+colors = PackedColorArray(0.25882354, 0.42745098, 0, 0.15686275, 0, 0, 0, 0, 0.25882354, 0.42745098, 0, 0.15686275)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_anioc"]
+gradient = SubResource("Gradient_racfr")
+
+[sub_resource type="Gradient" id="Gradient_anioc"]
+offsets = PackedFloat32Array(0, 0.21367522, 0.8034188, 1)
+colors = PackedColorArray(0, 0, 0, 0.39215687, 0.09019608, 0.3137255, 0.21960784, 0.039215688, 0.09411765, 0.33333334, 0.23137255, 0.039215688, 0, 0, 0, 0.39215687)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fgiyv"]
+gradient = SubResource("Gradient_anioc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_racfr"]
+bg_color = Color(0, 0, 0, 0.50980395)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[node name="ScreenOverlay" type="CanvasLayer" unique_id=493731240]
+script = ExtResource("1_racfr")
+
+[node name="BGShadows" type="Sprite2D" parent="." unique_id=1458291257]
+position = Vector2(200.00002, 400.00006)
+scale = Vector2(6.2500005, 12.500001)
+texture = SubResource("GradientTexture2D_e1gkp")
+
+[node name="Overlay" type="Sprite2D" parent="." unique_id=1811864673]
+position = Vector2(200, 400)
+scale = Vector2(5.25, 12.5)
+texture = SubResource("GradientTexture2D_racfr")
+
+[node name="ColourGradient" type="Sprite2D" parent="." unique_id=2108474227]
+position = Vector2(200, 399.99997)
+scale = Vector2(5.25, 12.499999)
+texture = SubResource("GradientTexture2D_anioc")
+
+[node name="Highlight" type="Sprite2D" parent="." unique_id=742645912]
+position = Vector2(200, 400)
+scale = Vector2(5.2499995, 12.5)
+texture = SubResource("GradientTexture2D_fgiyv")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=834639274]
+offset_right = 400.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_racfr")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=118731049]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=847369186]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_e1gkp")
+theme_override_font_sizes/font_size = 28
+text = "Parts Needed"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=467996318]
+unique_name_in_owner = true
+offset_left = 344.0
+offset_top = 24.0
+offset_right = 384.0
+offset_bottom = 137.0
+
+[node name="heart" type="TextureRect" parent="VBoxContainer" unique_id=364109254]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/heart" unique_id=92119911 instance=ExtResource("2_fgiyv")]
+position = Vector2(23.999996, 15.999999)
+scale = Vector2(0.2, 0.2)
+animation = &"default"
+
+[node name="heart2" type="TextureRect" parent="VBoxContainer" unique_id=1520314136]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/heart2" unique_id=843535634 instance=ExtResource("2_fgiyv")]
+position = Vector2(23.999996, 15.999999)
+scale = Vector2(0.2, 0.2)
+animation = &"default"
+
+[node name="heart3" type="TextureRect" parent="VBoxContainer" unique_id=342742190]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/heart3" unique_id=1553399083 instance=ExtResource("2_fgiyv")]
+position = Vector2(23.999996, 15.999999)
+scale = Vector2(0.2, 0.2)
+animation = &"default"
