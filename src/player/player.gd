@@ -49,7 +49,7 @@ func apply_stack_sway(delta: float) -> void:
 		
 		# Make sure the collision box follow the top of the stack
 		if i == (stack.size() - 1):
-			$Area2D.position = item.position
+			$Area2D.position.y = item.position.y
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_meta("is_stacked", false):

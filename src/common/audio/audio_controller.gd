@@ -12,7 +12,7 @@ func play_music() -> void:
 	if !mute:
 		$Music.play()
 
-func play_stack_success() -> void:
+func play_stack_success(key, recipe) -> void:
 	if !mute:
 		$StackSuccess.play()
 
